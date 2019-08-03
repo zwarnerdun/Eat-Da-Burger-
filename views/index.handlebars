@@ -4,10 +4,9 @@
     <br>
     <h2 id="color-override">Make a Burger</h2>
     <panel>
-        <form class="create-form">
+        <form class="create-form" id="add-burger" action="/burgers/create" method="POST">
             <div class="form-group">
                 <label for="newburger" id="color-override">New Burger:</label>
-                <form id="add-burger" action="api/burgers" method="POST">
                 <input type="text" id="burger-name" name="burger_name"></input>
                 {{!-- <input type="text" id="newburger" name="burger"> --}}
                 <button type="submit" class="btn btn-success" id="addburger">What would you like?</button>

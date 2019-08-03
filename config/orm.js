@@ -29,7 +29,7 @@ function objToSql(ob) {
 
 var orm = {
     // Display all burgers in the database//
-    selectAll: function(table, cb) {
+    all: function(table, cb) {
         var queryString = "SELECT * FROM " + table + ";";
 
         connection.query(queryString, function(err, result) {
@@ -40,7 +40,7 @@ var orm = {
         });
     },
     // Add a burger to the database//
-    insertOne: function(table, cols, vals, cb) {
+    create: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
         queryString += " (";
         queryString += cols.toString();
@@ -59,7 +59,7 @@ var orm = {
         });
     },
     // Set burger devoured status to true//
-    updateOne: function(table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -76,7 +76,7 @@ var orm = {
         });
     },
     // Delete a burger from the database//
-    deleteOne: function(table, condition, cb) {
+    delete: function(table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
