@@ -28,7 +28,7 @@ router.put("/burgers/:id", function(req, res) {
   burger.update( req.params.id,
   function(result) {
     console.log(result);
-    res.redirect("/");
+    res.json("/");
   });
 });
 
